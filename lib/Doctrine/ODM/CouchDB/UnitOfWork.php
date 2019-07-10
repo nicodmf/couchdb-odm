@@ -1008,6 +1008,7 @@ class UnitOfWork
         $config = $this->dm->getConfiguration();
 
         $bulkUpdater = $this->dm->getCouchDBClient()->createBulkUpdater();
+        //v1 only
         $bulkUpdater->setAllOrNothing($config->getAllOrNothingFlush());
 
         foreach ($this->scheduledRemovals AS $oid => $document) {
